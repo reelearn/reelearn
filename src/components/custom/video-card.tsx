@@ -75,16 +75,13 @@ const VideoCard: FC<Props> = ({ video }) => {
           onClick={togglePlay}
         />
         {!isPlaying && (
-          <div
-            className="absolute inset-0 w-full h-full bg-black/30 z-20 flex items-center justify-center text-5xl"
-            onClick={togglePlay}
-          >
+          <div className="absolute inset-0 w-full h-full bg-black/30 backdrop-blur-sm z-10 flex items-center justify-center text-5xl pointer-events-none">
             <PlayIcon />
           </div>
         )}
-        <div className="absolute bottom-0 left-0 right-0 h-60 bg-gradient-to-t from-black opacity-30 pointer-events-none select-none" />
+        <div className="absolute bottom-0 left-0 right-0 h-60 z-20 bg-gradient-to-t from-black opacity-30 pointer-events-none select-none" />
 
-        <div className="absolute flex flex-col w-16 bottom-2 right-0.5 items-center select-none">
+        <div className="absolute flex flex-col w-16 bottom-2 z-20 right-0.5 items-center select-none">
           <div className="p-2">
             <div className="w-12 h-12 rounded-full flex items-center justify-center overflow-hidden border-2 relative mb-1 story-pulsating-brand border-brand">
               <img
@@ -115,7 +112,7 @@ const VideoCard: FC<Props> = ({ video }) => {
             <div className="p-3.5 cursor-pointer"></div>
           </div>
         </div>
-        <div className="absolute bottom-5 left-5 right-20 pointer-events-none">
+        <div className="absolute bottom-5 left-5 right-20 z-20 pointer-events-none">
           <div className="flex flex-row items-center gap-x-2">
             <div>
               <div className="flex items-center">
