@@ -1,4 +1,4 @@
-import { FC, useRef, useState } from "react";
+import { FC, useEffect, useRef, useState } from "react";
 
 // icons
 import {
@@ -33,8 +33,6 @@ const VideoCard: FC<Props> = ({ video }) => {
   };
 
   const togglePlay = () => {
-    console.log("toggle play");
-
     if (videoRef.current) {
       if (isPlaying) {
         videoRef?.current?.pause();
@@ -44,6 +42,27 @@ const VideoCard: FC<Props> = ({ video }) => {
       setIsPlaying(!isPlaying);
     }
   };
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const [entry] = entries;
+        setIsPlaying(entry.isIntersecting);
+        entry.isIntersecting
+          ? videoRef?.current?.play()
+          : videoRef?.current?.pause();
+      },
+      {
+        root: null,
+        rootMargin: "0px",
+        threshold: 1.0,
+      }
+    );
+    if (videoRef.current) observer.observe(videoRef?.current);
+    return () => {
+      if (videoRef.current) observer.unobserve(videoRef?.current);
+    };
+  }, []);
 
   return (
     <div
