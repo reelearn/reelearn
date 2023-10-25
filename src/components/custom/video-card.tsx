@@ -1,4 +1,11 @@
-import { FC, useEffect, useRef, useState } from "react";
+import {
+  Dispatch,
+  FC,
+  SetStateAction,
+  useEffect,
+  useRef,
+  useState,
+} from "react";
 
 // icons
 import {
@@ -12,23 +19,21 @@ import { AiFillPlayCircle as PlayIcon } from "react-icons/ai";
 import { PiHeartBold as HeartIcon } from "react-icons/pi";
 
 interface Props {
-  video: {
-    id: string;
-    title: string;
-    path: string;
-  };
+  video: { id: string; title: string; path: string };
+  isMuted: boolean;
+  setIsMuted: Dispatch<SetStateAction<boolean>>;
 }
 
-const VideoCard: FC<Props> = ({ video }) => {
+const VideoCard: FC<Props> = ({ video, isMuted, setIsMuted }) => {
   const videoRef = useRef<HTMLVideoElement | null>(null);
   const [isPlaying, setIsPlaying] = useState(true);
-  const [isMuted, setIsMuted] = useState(false);
+  const [width, setWidth] = useState(0);
 
   const toggleAudio = () => {
     if (videoRef.current) {
       const videoElement = videoRef.current;
       videoElement.muted = !videoElement.muted;
-      setIsMuted(!videoElement.muted);
+      setIsMuted((state) => !state);
     }
   };
 
@@ -58,7 +63,15 @@ const VideoCard: FC<Props> = ({ video }) => {
         threshold: 1.0,
       }
     );
-    if (videoRef.current) observer.observe(videoRef?.current);
+    if (videoRef.current) {
+      observer.observe(videoRef?.current);
+      videoRef.current.ontimeupdate = () => {
+        if (videoRef.current?.currentTime && videoRef.current?.duration)
+          setWidth(
+            (videoRef.current?.currentTime / videoRef.current?.duration) * 100
+          );
+      };
+    }
     return () => {
       if (videoRef.current) observer.unobserve(videoRef?.current);
     };
@@ -84,7 +97,7 @@ const VideoCard: FC<Props> = ({ video }) => {
             playsInline
             loop
             autoPlay
-            muted
+            muted={isMuted}
             ref={videoRef}
             src={video.path}
           />
@@ -92,6 +105,12 @@ const VideoCard: FC<Props> = ({ video }) => {
         <div
           className="absolute bottom-0 left-0 right-0 top-0 select-none"
           onClick={togglePlay}
+        />
+        <div
+          className="absolute bottom-0 left-0 h-0.5 bg-white z-30 rounded-md transition-all"
+          style={{
+            width: `${width}%`,
+          }}
         />
         {!isPlaying && (
           <div className="absolute inset-0 w-full h-full bg-black/30 backdrop-blur-sm z-10 flex items-center justify-center text-5xl pointer-events-none">
@@ -120,9 +139,9 @@ const VideoCard: FC<Props> = ({ video }) => {
             <div className="p-3.5 cursor-pointer">
               <button onClick={toggleAudio} className="w-full">
                 {isMuted ? (
-                  <UnMuteIcon className="w-full text-2xl" />
-                ) : (
                   <MuteIcon className="w-full text-2xl" />
+                ) : (
+                  <UnMuteIcon className="w-full text-2xl" />
                 )}
               </button>
             </div>

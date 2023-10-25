@@ -10,6 +10,7 @@ import { useEffect, useState } from "react";
 
 const VideoScrollContainer = () => {
   const [height, setHeight] = useState(0);
+  const [isMuted, setIsMuted] = useState(true);
 
   useEffect(() => {
     setHeight(window.innerHeight - 58);
@@ -25,7 +26,12 @@ const VideoScrollContainer = () => {
       >
         {videosData.map((video) => (
           <SwiperSlide key={video.id} className="w-full h-full">
-            <VideoCard key={video.id} video={video} />
+            <VideoCard
+              key={video.id}
+              video={video}
+              isMuted={isMuted}
+              setIsMuted={setIsMuted}
+            />
           </SwiperSlide>
         ))}
       </Swiper>
