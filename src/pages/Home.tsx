@@ -1,4 +1,5 @@
-import VideoScrollContainer from "@/components/custom/video-scroll-container";
+import BooksContainer from "@/components/custom/books-container";
+// import VideoScrollContainer from "@/components/custom/video-scroll-container";
 
 const Home = () => {
   return (
@@ -9,7 +10,8 @@ const Home = () => {
         maxWidth: 450,
       }}
     >
-      <VideoScrollContainer />
+      {/* <VideoScrollContainer /> */}
+      <BooksContainer />
     </div>
   );
 };
