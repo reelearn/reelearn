@@ -5,7 +5,7 @@ interface Props {
   content: PosterPage;
 }
 
-const StoryCard: FC<Props> = ({ content }) => {
+const PosterCard: FC<Props> = ({ content }) => {
   return (
     <div
       className="w-full h-full flex flex-col items-center justify-center gap-4"
@@ -15,8 +15,8 @@ const StoryCard: FC<Props> = ({ content }) => {
       }}
     >
       <img
-        src="https://img.freepik.com/premium-photo/iron-man-wallpapers-iphone-android-iron-man-wallpaper-marvel-wallpaper-marvel-wallpaper-marvel-wallpaper-marvel-wallpaper-marvel-wallpaper-marvel-wallpaper_900775-42297.jpg"
-        alt=""
+        src={content.poster}
+        alt={content.title}
         className="block aspect-[3/4] object-cover w-[80%] rounded-lg overflow-hidden"
       />
       <p className="text-4xl font-bold">{content.title}</p>
@@ -24,4 +24,4 @@ const StoryCard: FC<Props> = ({ content }) => {
   );
 };
 
-export default StoryCard;
+export default PosterCard;

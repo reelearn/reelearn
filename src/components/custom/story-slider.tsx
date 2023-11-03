@@ -1,59 +1,83 @@
-import { FC, useRef } from "react";
+import { FC, useEffect, useRef, useState } from "react";
 
 // Import Swiper React components
-import { Swiper, SwiperSlide } from "swiper/react";
+import { Swiper, SwiperRef, SwiperSlide } from "swiper/react";
 
 // Import Swiper styles
 import "swiper/css";
-import "swiper/css/pagination";
-import "swiper/css/navigation";
 
 // import required modules
-// import { Autoplay, Pagination, Navigation } from "swiper/modules";
+import { Autoplay } from "swiper/modules";
 
 import { Page, PosterPage, TextPage, VideoPage } from "@/interfaces";
-import StoryCard from "./story-card";
+
 import VideoCard from "./video-card";
 import TextCard from "./text-card";
+import PosterCard from "./poster-card";
+
+// icons
+import { FaPlay as PlayIcon, FaPause as PauseIcon } from "react-icons/fa6";
 
 interface Props {
+  currentBook: boolean;
   height: number;
   pages: Page[];
 }
 
-const StorySlider: FC<Props> = ({ height, pages }) => {
-  const progressCircle = useRef<SVGSVGElement>(null);
+const StorySlider: FC<Props> = ({ currentBook, height, pages }) => {
+  const swiperRef = useRef<SwiperRef | null>(null);
 
+  const [isPlaying, setIsPlaying] = useState(true);
+  const [barsWidth, setBarsWidth] = useState<number[]>([]);
+
+  const handleIntersection = (entries: IntersectionObserverEntry[]) => {
+    if (entries[0].isIntersecting) {
+      intersectionObserver.disconnect();
+      swiperRef.current?.swiper.autoplay.start();
+    }
+  };
+
+  const intersectionObserver = new IntersectionObserver(handleIntersection);
+
+  useEffect(() => {
+    console.log("hello this is slide", currentBook);
+  }, []);
   return (
     <Swiper
       className=" w-full"
       style={{
         height: `${height}px`,
       }}
-      // spaceBetween={30}
-      // centeredSlides={true}
-      // autoplay={{
-      //   delay: 2500,
-      //   disableOnInteraction: false,
-      // }}
-      // pagination={{
-      //   clickable: true,
-      // }}
-      // navigation={true}
-      // modules={[Autoplay, Pagination, Navigation]}
-      // onAutoplayTimeLeft={(s, time, progress) => {
-      //   if (progressCircle?.current) {
-      //     progressCircle?.current.style.setProperty(
-      //       "--progress",
-      //       `${1 - progress}`
-      //     );
-      //   }
-      // }}
+      ref={swiperRef}
+      autoplay={{
+        delay: 5000,
+        disableOnInteraction: false,
+      }}
+      pagination={{
+        clickable: true,
+      }}
+      navigation={true}
+      modules={[Autoplay]}
+      onSlideChange={(swiper) => {
+        setBarsWidth((prevBarsWidth) =>
+          prevBarsWidth.map((_, index) =>
+            index < swiper.activeIndex ? 100 : 0
+          )
+        );
+        setIsPlaying(true);
+      }}
+      onAutoplayTimeLeft={(swiper, _, percentage) => {
+        setBarsWidth((prevBarsWidth) => {
+          const updatedBarsWidth = [...prevBarsWidth]; // Create a copy of the state array
+          updatedBarsWidth[swiper.activeIndex] = 100 - percentage * 100; // Reverse the calculation
+          return updatedBarsWidth;
+        });
+      }}
     >
       {pages.map((page, index) => (
         <SwiperSlide key={index} className="relative w-full h-full">
           {page.type === "POSTER" && (
-            <StoryCard content={page.content as PosterPage} />
+            <PosterCard content={page.content as PosterPage} />
           )}
           {page.type === "TEXT" && (
             <TextCard content={page.content as TextPage} />
@@ -64,13 +88,35 @@ const StorySlider: FC<Props> = ({ height, pages }) => {
               user={{ name: "Sahil Verma" }}
             />
           )}
-          <div className="autoplay-progress absolute bottom-3 right-3">
-            <svg viewBox="0 0 48 48" ref={progressCircle} className="">
-              <circle cx="24" cy="24" r="20"></circle>
-            </svg>
-          </div>
         </SwiperSlide>
       ))}
+      <div className="absolute top-0 left-0 bg-black/20 backdrop-blur w-full flex gap-1 z-50 p-3">
+        {swiperRef.current?.swiper.slides.map((_, index) => (
+          <div
+            key={index}
+            className="h-1 w-full relative bg-white/30 rounded-full"
+          >
+            <div
+              className="absolute h-full top-0 left-0 bg-white rounded-full"
+              style={{
+                width: `${barsWidth[index]}%`,
+              }}
+            />
+          </div>
+        ))}
+      </div>
+      <div className="z-50 absolute bottom-4 right-4">
+        <button
+          onClick={() => {
+            if (isPlaying) swiperRef.current?.swiper.autoplay.pause();
+            else swiperRef.current?.swiper.autoplay.resume();
+            setIsPlaying((state) => !state);
+          }}
+          className="h-10 text-xs flex items-center justify-center rounded-full aspect-square bg-black/20 backdrop-blur"
+        >
+          {isPlaying ? <PauseIcon /> : <PlayIcon />}
+        </button>
+      </div>
     </Swiper>
   );
 };

@@ -11,6 +11,8 @@ import StorySlider from "./story-slider";
 const BooksContainer = () => {
   const [height, setHeight] = useState(0);
 
+  const [currentBookIndex, setCurrentBookIndex] = useState(0);
+
   useEffect(() => {
     setHeight(window.innerHeight - 58);
   }, []);
@@ -22,10 +24,17 @@ const BooksContainer = () => {
         style={{
           height: `${height}px`,
         }}
+        onSlideChange={(s) => {
+          setCurrentBookIndex(s.activeIndex);
+        }}
       >
         {books.map((book, index) => (
           <SwiperSlide key={index} className="w-full h-full">
-            <StorySlider height={height} pages={book.pages} />
+            <StorySlider
+              height={height}
+              currentBook={currentBookIndex === index}
+              pages={book.pages}
+            />
           </SwiperSlide>
         ))}
       </Swiper>
