@@ -81,7 +81,7 @@ export const books: Book[] = [
       {
         type: "VIDEO",
         content: {
-          src: "http://content.reelearn.ai/videos/Whatsapp%20Videos/43/43%20(English%20Compress).mp4", // Replace with a hardcoded value
+          src: "https://content.reelearn.ai/videos/Whatsapp%20Videos/43/43%20(English%20Compress).mp4", // Replace with a hardcoded value
           caption: "A video in Book 1",
           tags: ["tag1", "tag2"],
         },
@@ -94,7 +94,7 @@ export const books: Book[] = [
       {
         type: "VIDEO",
         content: {
-          src: "http://content.reelearn.ai/videos/Whatsapp%20Videos/19/19%20(English%20Compress).mp4", // Replace with a hardcoded value
+          src: "https://content.reelearn.ai/videos/Whatsapp%20Videos/19/19%20(English%20Compress).mp4", // Replace with a hardcoded value
           caption: "Another video in Book 2",
           tags: ["tag3", "tag4"],
         },
@@ -136,7 +136,7 @@ export const books: Book[] = [
       {
         type: "VIDEO",
         content: {
-          src: "http://content.reelearn.ai/videos/Whatsapp%20Videos/33/33%20(English%20Compress).mp4", // Replace with a hardcoded value
+          src: "https://content.reelearn.ai/videos/Whatsapp%20Videos/33/33%20(English%20Compress).mp4", // Replace with a hardcoded value
           caption: "Video in Book 4",
           tags: ["tag5", "tag6"],
         },
