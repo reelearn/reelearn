@@ -2,72 +2,147 @@ import { Book } from "@/interfaces";
 
 export const books: Book[] = [
   {
-    pages: [
-      {
-        content: {
-          poster:
-            "https://www.reelearn.ai/Books/The%20Alchemist%20by%20Paulo%20Coelho/icon.jpg",
-          title: "The Alchemist by Paulo Coelho",
-          titleColor: "#fff",
-          bgColor: "#222024",
-        },
-        type: "POSTER",
-      },
-      {
-        type: "TEXT",
-        content: {
-          textColor: "black",
-          bgColor: "white",
-          text: "In the first part of The Alchemist, we meet Santiago, a young shepherd boy who dreams of finding treasure at the Egyptian pyramids. Santiago is content with his simple life, but he can't shake the feeling that there is something more out there for him. He consults a gypsy woman who tells him that his dream is significant and advises him to follow it. Santiago is skeptical at first, but he decides to take a leap of faith and pursue his dream.",
-        },
-      },
-
-      {
-        type: "TEXT",
-        content: {
-          textColor: "black",
-          bgColor: "white",
-          text: "In this part, Santiago meets Melchizedek, the king of Salem, who encourages him to pursue his Personal Legend. Melchizedek explains that a Personal Legend is a person's true purpose in life, and that everyone has one. He also introduces Santiago to the concept of the Soul of the World, which is the underlying force that connects all living things. Santiago is inspired by Melchizedek's wisdom and decides to sell his sheep and embark on his journey to find his treasure.",
-        },
-      },
-      {
-        type: "TEXT",
-        content: {
-          textColor: "black",
-          bgColor: "white",
-          text: "In this part, Santiago travels to Tangier, a bustling city in North Africa. He hopes to find a caravan that will take him closer to the pyramids. However, he encounters a thief who steals all his money. Santiago is devastated and begins to doubt whether he made the right decision to pursue his dream. He considers giving up and going back to his old life, but then he meets an Englishman who tells him about an alchemist in the desert who might be able to help him.",
-        },
-      },
-      {
-        type: "TEXT",
-        content: {
-          textColor: "black",
-          bgColor: "white",
-          text: "Santiago arrives in the desert and meets the alchemist, a wise and mysterious man. The alchemist agrees to help Santiago on his journey and teaches him important lessons about listening to his heart and following the signs that the universe provides. The alchemist also introduces Santiago to the concept of the Philosopher's Stone, which represents the ultimate goal of alchemy. Santiago learns that the real treasure he is seeking is not material wealth, but spiritual enlightenment.",
-        },
-      },
-      {
-        type: "TEXT",
-        content: {
-          textColor: "black",
-          bgColor: "white",
-          text: "In this part, Santiago undergoes a series of trials and challenges as he continues his journey across the desert. He learns to communicate with the desert, the wind, and the sun, and gains a deeper understanding of the Soul of the World. Santiago also falls in love with a girl named Fatima, but he must choose between staying with her or continuing his quest for his Personal Legend. Santiago realizes that he cannot abandon his dream and must continue on his path.",
-        },
-      },
-      {
-        type: "TEXT",
-        content: {
-          textColor: "black",
-          bgColor: "white",
-          text: "In the final part of the book, Santiago finally reaches the Egyptian pyramids. However, he is captured by a group of thieves who demand to know where the treasure is. Santiago realizes that the treasure was within him all along and that the journey itself was the real treasure. He manages to escape and returns to the oasis, where he finds Fatima waiting for him. They embrace and Santiago shares his newfound wisdom with the people of the oasis. Santiago's journey ends with the realization that true fulfillment comes from following one's heart and pursuing one's dreams.",
-        },
-      },
-    ],
-    user: {
-      name: "Paulo Coelho",
+  "pages": [
+    {
+      "type": "POSTER",
+      "content": {
+        "poster": "https://www.reelearn.ai/Books/And%20Then%20There%20Were%20None%20by%20Agatha%20Christie/icon.jpg",
+        "title": "And Then There Were None by Agatha Christie",
+        "titleColor": "#fff",
+        "bgColor": "#222024"
+      }
     },
-  },
-  {
+    {
+      "type": "TEXT",
+      "content": {
+        "textColor": "black",
+        "bgColor": "white",
+        "title": "Part 1: The Invitation to Indian Island",
+        "text": "And Then There Were None by Agatha Christie begins with ten strangers receiving invitations to visit Indian Island. Each guest has a different reason for accepting the invitation, whether it's for a job opportunity or a chance to reconnect with old friends. The guests arrive on the island, only to find that their hosts, Mr. and Mrs. U.N. Owen, are nowhere to be found. As they settle in, they notice a peculiar nursery rhyme framed on the wall, hinting at a dark fate that awaits them all."
+      }
+    },
+    {
+      "type": "TEXT",
+      "content": {
+        "textColor": "black",
+        "bgColor": "white",
+        "title": "Part 2: The Mysterious Disappearances",
+        "text": "As the guests explore the island, they discover that they are completely cut off from the mainland. The boat that brought them has mysteriously disappeared, leaving them stranded. They begin to suspect foul play when they find a gramophone recording accusing each of them of committing a murder in the past. Shocked and confused, they realize that they have been brought to the island to pay for their crimes. Panic sets in as they realize that the killer must be among them."
+      }
+    },
+    {
+      "type": "TEXT",
+      "content": {
+        "textColor": "black",
+        "bgColor": "white",
+        "title": "Part 3: The First Death",
+        "text": "The first death occurs when one of the guests, Anthony Marston, chokes on a poisoned drink. The remaining guests are horrified and start to suspect each other. They search the island for any signs of the killer but find nothing. Tensions rise as paranoia takes hold, and they begin to question their own sanity. With each passing hour, the guests become more desperate to uncover the truth and survive."
+      }
+    },
+    {
+      "type": "TEXT",
+      "content": {
+        "textColor": "black",
+        "bgColor": "white",
+        "title": "Part 4: The Ten Little Soldier Statues",
+        "text": "As the guests gather for dinner, they notice ten soldier statues on the dining table. Each statue represents one of them, and with each death, a statue disappears. It becomes clear that the killer is following the nursery rhyme, 'Ten Little Soldier Boys,' as a guide for their murders. The remaining guests are filled with dread as they realize that the killer is methodically eliminating them one by one."
+      }
+    },
+    {
+      "type": "TEXT",
+      "content": {
+        "textColor": "black",
+        "bgColor": "white",
+        "title": "Part 5: The Unraveling of Secrets",
+        "text": "As the body count rises, the remaining guests desperately try to uncover the identity of the killer. They share their suspicions and secrets, hoping to find a clue that will lead them to the murderer. However, the more they learn about each other, the more confused they become. Trust erodes, and alliances shift as they struggle to stay alive and outsmart the killer who seems to always be one step ahead."
+      }
+    },
+    {
+      "type": "TEXT",
+      "content": {
+        "textColor": "black",
+        "bgColor": "white",
+        "title": "Part 6: The Final Revelation",
+        "text": "In the thrilling conclusion, the remaining guests confront their darkest secrets and face the truth about their pasts. They realize that the killer is not one of them but someone who has been orchestrating the events from behind the scenes. The shocking identity of the murderer is revealed, leaving the survivors in disbelief. In a race against time, they must find a way to escape the island and bring the killer to justice before it's too late."
+      }
+    }
+  ],
+  "user": {
+    "name": "Agatha Christie"
+  }
+}dk@LAPTOP-812A3DMK:/mnt/c/Users/dksid/projects/books$ cat Books/And\ Then\ There\ Were\ None\ by\ Agatha\ Christie/data.json ^C
+dk@LAPTOP-812A3DMK:/mnt/c/Users/dksid/projects/books$ cat Books/The\ Alchemist\ by\ Paulo\ Coelho/data.json
+{
+  "pages": [
+    {
+      "type": "POSTER",
+      "content": {
+        "poster": "https://www.reelearn.ai/Books/The%20Alchemist%20by%20Paulo%20Coelho/icon.jpg",
+        "title": "The Alchemist by Paulo Coelho",
+        "titleColor": "#fff",
+        "bgColor": "#222024"
+      }
+    },
+    {
+      "type": "TEXT",
+      "content": {
+        "textColor": "black",
+        "bgColor": "white",
+        "title": "Part 1: The Journey Begins",
+        "text": "The Alchemist tells the story of Santiago, a young shepherd who dreams of finding a hidden treasure. He embarks on a journey to fulfill his personal legend, guided by a recurring dream and a mysterious old man. Along the way, Santiago learns important lessons about following his heart and listening to the signs of the universe. He meets an Englishman who is searching for the secret of alchemy, and a beautiful woman named Fatima who becomes his love interest. Santiago also encounters the alchemist, a wise man who teaches him about the importance of pursuing one's dreams and the language of the world."
+      }
+    },
+    {
+      "type": "TEXT",
+      "content": {
+        "textColor": "black",
+        "bgColor": "white",
+        "title": "Part 2: The Pursuit of Personal Legend",
+        "text": "As Santiago continues his journey, he faces various challenges and setbacks. He learns that the universe conspires to help those who are pursuing their personal legends. He meets an oasis where he learns about the concept of the Soul of the World and the principle of favorability. Santiago also learns about the importance of listening to his heart and the omens that guide him towards his treasure. He realizes that fear and doubt are his biggest obstacles, but he must overcome them to achieve his dreams."
+      }
+    },
+    {
+      "type": "TEXT",
+      "content": {
+        "textColor": "black",
+        "bgColor": "white",
+        "title": "Part 3: The Alchemist's Wisdom",
+        "text": "Santiago finally reaches the Egyptian pyramids, where he believes his treasure awaits. However, he is captured by a group of thieves who demand that he reveal the location of the treasure. Santiago uses his knowledge of alchemy to turn himself into the wind and escape. He returns to the oasis, where he reunites with Fatima and the alchemist. The alchemist imparts his final wisdom to Santiago, teaching him that true alchemy is about transforming himself and achieving spiritual enlightenment. Santiago realizes that the treasure he sought was within him all along."
+      }
+    },
+    {
+      "type": "TEXT",
+      "content": {
+        "textColor": "black",
+        "bgColor": "white",
+        "title": "Part 4: The Power of Dreams",
+        "text": "Santiago returns to Spain, where he finds the hidden treasure at the place where his journey began. However, he also realizes that the true treasure lies in the lessons he learned and the transformation he underwent during his journey. He becomes a wealthy man, but he chooses to use his wealth to help others and build a school. Santiago's story teaches us that we all have a personal legend to fulfill and that the pursuit of our dreams is what gives our lives meaning and purpose."
+      }
+    },
+    {
+      "type": "TEXT",
+      "content": {
+        "textColor": "black",
+        "bgColor": "white",
+        "title": "Part 5: The Language of the World",
+        "text": "Throughout his journey, Santiago learns about the language of the world, which is the universal language of signs and omens. He discovers that everything in the universe is interconnected and that by paying attention to the signs, he can navigate his way towards his personal legend. Santiago also learns about the importance of living in the present moment and embracing the beauty of life. He realizes that the universe is always conspiring to help him and that he must trust in its guidance."
+      }
+    },
+    {
+      "type": "TEXT",
+      "content": {
+        "textColor": "black",
+        "bgColor": "white",
+        "title": "Part 6: The Alchemist's Legacy",
+        "text": "The Alchemist leaves us with the powerful message that we all have the ability to transform our lives and pursue our dreams. It reminds us that the journey is often more important than the destination and that true fulfillment comes from following our hearts and embracing the unknown. The book encourages us to listen to the signs and omens that guide us and to have the courage to pursue our personal legends. The Alchemist is a timeless tale that inspires readers to live their lives to the fullest and never give up on their dreams."
+      }
+    }
+  ],
+  "user": {
+    "name": "Paulo Coelho"
+  }
+},
+{
     user: { name: "User1" },
     pages: [
       {
