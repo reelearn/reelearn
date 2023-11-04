@@ -71,12 +71,14 @@ export const books: Book[] = [
     user: { name: "User1" },
     pages: [
       {
-        type: "TEXT",
         content: {
-          textColor: "black",
-          bgColor: "white",
-          text: "This is the first text page of Book 1.",
+          poster:
+            "https://storage.googleapis.com/reelearncontent/videos/Whatsapp%20Videos/43/43_poster.jpg",
+          title: "The Alchemist by Paulo Coelho",
+          titleColor: "#fff",
+          bgColor: "#222024",
         },
+        type: "POSTER",
       },
       {
         type: "VIDEO",
@@ -91,6 +93,17 @@ export const books: Book[] = [
   {
     user: { name: "User2" },
     pages: [
+      
+      {
+        content: {
+          poster:
+            "https://storage.googleapis.com/reelearncontent/videos/Whatsapp%20Videos/19/19_poster.jpg",
+          title: "The Alchemist by Paulo Coelho",
+          titleColor: "#fff",
+          bgColor: "#222024",
+        },
+        type: "POSTER",
+      },
       {
         type: "VIDEO",
         content: {
@@ -132,7 +145,17 @@ export const books: Book[] = [
   },
   {
     user: { name: "User4" },
-    pages: [
+    pages: [    
+      {
+        content: {
+          poster:
+            "https://storage.googleapis.com/reelearncontent/videos/Whatsapp%20Videos/33/33_poster.jpg",
+          title: "The Alchemist by Paulo Coelho",
+          titleColor: "#fff",
+          bgColor: "#222024",
+        },
+        type: "POSTER",
+      },
       {
         type: "VIDEO",
         content: {
