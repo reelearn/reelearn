@@ -1,73 +1,77 @@
 import { Book } from "@/interfaces";
 
 export const books: Book[] = [
-  {
-    pages: [
-      {
-        content: {
-          poster:
-            "https://www.reelearn.ai/Books/The%20Alchemist%20by%20Paulo%20Coelho/icon.jpg",
-          title: "The Alchemist by Paulo Coelho",
-          titleColor: "#fff",
-          bgColor: "#222024",
-        },
-        type: "POSTER",
-      },
-      {
-        type: "TEXT",
-        content: {
-          textColor: "black",
-          bgColor: "white",
-          text: "In the first part of The Alchemist, we meet Santiago, a young shepherd boy who dreams of finding treasure at the Egyptian pyramids. Santiago is content with his simple life, but he can't shake the feeling that there is something more out there for him. He consults a gypsy woman who tells him that his dream is significant and advises him to follow it. Santiago is skeptical at first, but he decides to take a leap of faith and pursue his dream.",
-        },
-      },
-
-      {
-        type: "TEXT",
-        content: {
-          textColor: "black",
-          bgColor: "white",
-          text: "In this part, Santiago meets Melchizedek, the king of Salem, who encourages him to pursue his Personal Legend. Melchizedek explains that a Personal Legend is a person's true purpose in life, and that everyone has one. He also introduces Santiago to the concept of the Soul of the World, which is the underlying force that connects all living things. Santiago is inspired by Melchizedek's wisdom and decides to sell his sheep and embark on his journey to find his treasure.",
-        },
-      },
-      {
-        type: "TEXT",
-        content: {
-          textColor: "black",
-          bgColor: "white",
-          text: "In this part, Santiago travels to Tangier, a bustling city in North Africa. He hopes to find a caravan that will take him closer to the pyramids. However, he encounters a thief who steals all his money. Santiago is devastated and begins to doubt whether he made the right decision to pursue his dream. He considers giving up and going back to his old life, but then he meets an Englishman who tells him about an alchemist in the desert who might be able to help him.",
-        },
-      },
-      {
-        type: "TEXT",
-        content: {
-          textColor: "black",
-          bgColor: "white",
-          text: "Santiago arrives in the desert and meets the alchemist, a wise and mysterious man. The alchemist agrees to help Santiago on his journey and teaches him important lessons about listening to his heart and following the signs that the universe provides. The alchemist also introduces Santiago to the concept of the Philosopher's Stone, which represents the ultimate goal of alchemy. Santiago learns that the real treasure he is seeking is not material wealth, but spiritual enlightenment.",
-        },
-      },
-      {
-        type: "TEXT",
-        content: {
-          textColor: "black",
-          bgColor: "white",
-          text: "In this part, Santiago undergoes a series of trials and challenges as he continues his journey across the desert. He learns to communicate with the desert, the wind, and the sun, and gains a deeper understanding of the Soul of the World. Santiago also falls in love with a girl named Fatima, but he must choose between staying with her or continuing his quest for his Personal Legend. Santiago realizes that he cannot abandon his dream and must continue on his path.",
-        },
-      },
-      {
-        type: "TEXT",
-        content: {
-          textColor: "black",
-          bgColor: "white",
-          text: "In the final part of the book, Santiago finally reaches the Egyptian pyramids. However, he is captured by a group of thieves who demand to know where the treasure is. Santiago realizes that the treasure was within him all along and that the journey itself was the real treasure. He manages to escape and returns to the oasis, where he finds Fatima waiting for him. They embrace and Santiago shares his newfound wisdom with the people of the oasis. Santiago's journey ends with the realization that true fulfillment comes from following one's heart and pursuing one's dreams.",
-        },
-      },
-    ],
-    user: {
-      name: "Paulo Coelho",
+{
+  "pages": [
+    {
+      "type": "POSTER",
+      "content": {
+        "poster": "https://www.reelearn.ai/Books/The%20Alchemist%20by%20Paulo%20Coelho/icon.jpg",
+        "title": "The Alchemist by Paulo Coelho",
+        "titleColor": "#fff",
+        "bgColor": "#222024"
+      }
     },
-  },
-  {
+    {
+      "type": "TEXT",
+      "content": {
+        "textColor": "black",
+        "bgColor": "white",
+        "title": "Part 1: The Journey Begins",
+        "text": "The Alchemist tells the story of Santiago, a young shepherd who dreams of finding a hidden treasure. He embarks on a journey to fulfill his personal legend, guided by a recurring dream and a mysterious old man. Along the way, Santiago learns important lessons about following his heart and listening to the signs of the universe. He meets an Englishman who is searching for the secret of alchemy, and a beautiful woman named Fatima who becomes his love interest. Santiago also encounters the alchemist, a wise man who teaches him about the importance of pursuing one's dreams and the language of the world."
+      }
+    },
+    {
+      "type": "TEXT",
+      "content": {
+        "textColor": "black",
+        "bgColor": "white",
+        "title": "Part 2: The Pursuit of Personal Legend",
+        "text": "As Santiago continues his journey, he faces various challenges and setbacks. He learns that the universe conspires to help those who are pursuing their personal legends. He meets an oasis where he learns about the concept of the Soul of the World and the principle of favorability. Santiago also learns about the importance of listening to his heart and the omens that guide him towards his treasure. He realizes that fear and doubt are his biggest obstacles, but he must overcome them to achieve his dreams."
+      }
+    },
+    {
+      "type": "TEXT",
+      "content": {
+        "textColor": "black",
+        "bgColor": "white",
+        "title": "Part 3: The Alchemist's Wisdom",
+        "text": "Santiago finally reaches the Egyptian pyramids, where he believes his treasure awaits. However, he is captured by a group of thieves who demand that he reveal the location of the treasure. Santiago uses his knowledge of alchemy to turn himself into the wind and escape. He returns to the oasis, where he reunites with Fatima and the alchemist. The alchemist imparts his final wisdom to Santiago, teaching him that true alchemy is about transforming himself and achieving spiritual enlightenment. Santiago realizes that the treasure he sought was within him all along."
+      }
+    },
+    {
+      "type": "TEXT",
+      "content": {
+        "textColor": "black",
+        "bgColor": "white",
+        "title": "Part 4: The Power of Dreams",
+        "text": "Santiago returns to Spain, where he finds the hidden treasure at the place where his journey began. However, he also realizes that the true treasure lies in the lessons he learned and the transformation he underwent during his journey. He becomes a wealthy man, but he chooses to use his wealth to help others and build a school. Santiago's story teaches us that we all have a personal legend to fulfill and that the pursuit of our dreams is what gives our lives meaning and purpose."
+      }
+    },
+    {
+      "type": "TEXT",
+      "content": {
+        "textColor": "black",
+        "bgColor": "white",
+        "title": "Part 5: The Language of the World",
+        "text": "Throughout his journey, Santiago learns about the language of the world, which is the universal language of signs and omens. He discovers that everything in the universe is interconnected and that by paying attention to the signs, he can navigate his way towards his personal legend. Santiago also learns about the importance of living in the present moment and embracing the beauty of life. He realizes that the universe is always conspiring to help him and that he must trust in its guidance."
+      }
+    },
+    {
+      "type": "TEXT",
+      "content": {
+        "textColor": "black",
+        "bgColor": "white",
+        "title": "Part 6: The Alchemist's Legacy",
+        "text": "The Alchemist leaves us with the powerful message that we all have the ability to transform our lives and pursue our dreams. It reminds us that the journey is often more important than the destination and that true fulfillment comes from following our hearts and embracing the unknown. The book encourages us to listen to the signs and omens that guide us and to have the courage to pursue our personal legends. The Alchemist is a timeless tale that inspires readers to live their lives to the fullest and never give up on their dreams."
+      }
+    }
+  ],
+  "user": {
+    "name": "Paulo Coelho"
+  }
+},
+{
     user: { name: "User1" },
     pages: [
       {
