@@ -1,4 +1,4 @@
-import { FC, useEffect, useRef, useState } from "react";
+import { FC, useRef, useState } from "react";
 
 // Import Swiper React components
 import { Swiper, SwiperRef, SwiperSlide } from "swiper/react";
@@ -24,7 +24,7 @@ interface Props {
   pages: Page[];
 }
 
-const StorySlider: FC<Props> = ({ currentBook, height, pages }) => {
+const StorySlider: FC<Props> = ({ height, pages }) => {
   const swiperRef = useRef<SwiperRef | null>(null);
 
   const [isPlaying, setIsPlaying] = useState(true);
@@ -39,9 +39,6 @@ const StorySlider: FC<Props> = ({ currentBook, height, pages }) => {
 
   const intersectionObserver = new IntersectionObserver(handleIntersection);
 
-  useEffect(() => {
-    console.log("hello this is slide", currentBook);
-  }, []);
   return (
     <Swiper
       className=" w-full"
