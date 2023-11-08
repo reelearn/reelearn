@@ -1,4 +1,4 @@
-import { FC, useRef, useState } from "react";
+import { FC, useEffect, useRef, useState } from "react";
 
 // Import Swiper React components
 import { Swiper, SwiperRef, SwiperSlide } from "swiper/react";
@@ -38,6 +38,36 @@ const StorySlider: FC<Props> = ({ height, pages }) => {
   };
 
   const intersectionObserver = new IntersectionObserver(handleIntersection);
+
+  const togglePlay = () => {
+    setIsPlaying((prevState) => {
+      const nextState = !prevState;
+      if (nextState) {
+        swiperRef.current?.swiper.autoplay.resume();
+      } else {
+        swiperRef.current?.swiper.autoplay.pause();
+      }
+      return nextState;
+    });
+  };
+
+  useEffect(() => {
+    const handleKeyDown = ({ key, keyCode }: KeyboardEvent) => {
+      if (key === "ArrowRight") {
+        swiperRef.current?.swiper.slideNext();
+      } else if (key === "ArrowLeft") {
+        swiperRef.current?.swiper.slidePrev();
+      } else if (keyCode === 32) {
+        togglePlay();
+      }
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
+
+    return () => {
+      window.removeEventListener("keydown", handleKeyDown);
+    };
+  }, []);
 
   return (
     <Swiper
@@ -104,11 +134,7 @@ const StorySlider: FC<Props> = ({ height, pages }) => {
       </div>
       <div className="z-50 absolute bottom-4 right-4">
         <button
-          onClick={() => {
-            if (isPlaying) swiperRef.current?.swiper.autoplay.pause();
-            else swiperRef.current?.swiper.autoplay.resume();
-            setIsPlaying((state) => !state);
-          }}
+          onClick={togglePlay}
           className="h-10 text-xs flex items-center justify-center rounded-full aspect-square bg-black/20 backdrop-blur"
         >
           {isPlaying ? <PauseIcon /> : <PlayIcon />}
