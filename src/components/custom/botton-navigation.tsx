@@ -2,6 +2,7 @@ import { MdHomeFilled as HomeIcon } from "react-icons/md";
 import { MdSettings as SettingsIcon } from "react-icons/md";
 import { MdHelp as HelpIcon } from "react-icons/md";
 import { MdShare as ShareIcon } from "react-icons/md";
+import { RWebShare } from "react-web-share";
 
 
 
@@ -42,6 +43,14 @@ const BottomNavigation = () => {
               <HelpIcon className="h-[28px] fill-white stroke-white w-[28px]" />
             </div>
           </div>
+          <RWebShare
+        data={{
+          text: "Like humans, flamingos make friends for life",
+          url: "https://on.natgeo.com/2zHaNup",
+          title: "Flamingos",
+        }}
+        onClick={() => console.log("shared successfully!")}
+      >
           <div
             key="1"
             className="no-link-highlight select-none basis-0 flex-grow cursor-pointer"
@@ -50,6 +59,7 @@ const BottomNavigation = () => {
               <ShareIcon className="h-[28px] fill-white stroke-white w-[28px]" />
             </div>
           </div>
+          </RWebShare>
       </nav>
     </div>
   );
