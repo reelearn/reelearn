@@ -45,9 +45,9 @@ const BottomNavigation = () => {
           </div>
           <RWebShare
         data={{
-          text: "Like humans, flamingos make friends for life",
-          url: "https://on.natgeo.com/2zHaNup",
-          title: "Flamingos",
+          text: "Discover a world of knowledge with Reelearn - book summary app! Concise, insightful summaries in just a tap. Dive into the essence of books effortlessly.",
+          url: "https://books.reelearn.ai/",
+          title: "Reelearn",
         }}
         onClick={() => console.log("shared successfully!")}
       >
