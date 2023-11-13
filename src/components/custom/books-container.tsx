@@ -6,6 +6,8 @@ import { Swiper, SwiperRef, SwiperSlide } from "swiper/react";
 // Import Swiper styles
 import "swiper/css";
 import { books } from "@/constants/books";
+
+// components
 import StorySlider from "./story-slider";
 
 const BooksContainer = () => {
@@ -27,23 +29,32 @@ const BooksContainer = () => {
       setHeight(window.innerHeight - 58);
     };
 
+    const handleScroll = (e: WheelEvent) => {
+      if (e.deltaY > 0) {
+        swiperRef.current?.swiper.slideNext();
+      } else {
+        swiperRef.current?.swiper.slidePrev();
+      }
+    };
+
     window.addEventListener("keydown", handleKeyDown);
     window.addEventListener("resize", handleResize);
+    window.addEventListener("wheel", handleScroll);
 
     return () => {
       window.removeEventListener("keydown", handleKeyDown);
       window.removeEventListener("resize", handleResize);
+      window.removeEventListener("wheel", handleScroll);
     };
   }, []);
+
   return (
     <div className="relative flex flex-col w-full flex-grow overflow-hidden">
       <Swiper
         className=" w-full"
         direction="vertical"
         ref={swiperRef}
-        style={{
-          height: `${height}px`,
-        }}
+        style={{ height: `${height}px` }}
         onSlideChange={(s) => {
           setCurrentBookIndex(s.activeIndex);
         }}
