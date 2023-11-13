@@ -10,6 +10,7 @@ import "swiper/css";
 import { books } from "@/constants/books";
 import StorySlider from "./story-slider";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
+import { Mousewheel } from "swiper/modules";
 
 const BooksContainer = () => {
   const [height, setHeight] = useState(0);
@@ -65,6 +66,9 @@ const BooksContainer = () => {
         style={{
           height: `${height}px`,
         }}
+        mousewheel={true}
+        slidesPerView={1}
+        modules={[Mousewheel]}
         onSlideChange={(s) => {
           setCurrentBookIndex(s.activeIndex);
           console.log(books[s.activeIndex].id);
