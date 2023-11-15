@@ -13,13 +13,23 @@ export const books: Book[] = [
         bgColor: "#222024",
       },
       {
+        type: "VIDEO",
+        caption: "yo bros",
+        src: "/videos/1.mp4",
+        tags: ["tag 1", "tag 2"],
+        user: {
+          name: "Sahil Verma",
+        },
+      },
+      {
         type: "TEXT",
         textColor: "black",
         bgColor: "white",
         title: "Part 1: The Invitation to Indian Island",
         text: "And Then There Were None by Agatha Christie begins with ten strangers receiving invitations to visit Indian Island. Each guest has a different reason for accepting the invitation, whether it's for a job opportunity or a chance to reconnect with old friends. The guests arrive on the island, only to find that their hosts, Mr. and Mrs. U.N. Owen, are nowhere to be found. As they settle in, they notice a peculiar nursery rhyme framed on the wall, hinting at a dark fate that awaits them all.",
-        audioSrc: "/audios/1.mp3",
+        // audioSrc: "/audios/1.mp3",
       },
+
       {
         type: "TEXT",
         textColor: "black",

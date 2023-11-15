@@ -10,8 +10,9 @@ import {
 } from "react-icons/md";
 
 import { AiFillPlayCircle as PlayIcon } from "react-icons/ai";
-
 import { PiHeartBold as HeartIcon } from "react-icons/pi";
+import { FaSpinner as SpinnerIcon } from "react-icons/fa";
+
 import { VideoPage } from "@/interfaces";
 import { useDispatch, useSelector } from "react-redux";
 import { selectAudio, setAudio } from "@/redux/slices/audioSlice";
@@ -25,6 +26,7 @@ const VideoCard: FC<Props> = ({ page }) => {
   const audio = useSelector(selectAudio);
   const dispatch = useDispatch();
   const [isPlaying, setIsPlaying] = useState(true);
+  const [isLoading, setIsLoading] = useState(true);
   const [width, setWidth] = useState(0);
 
   const toggleAudio = () => {
@@ -63,6 +65,25 @@ const VideoCard: FC<Props> = ({ page }) => {
     );
     if (videoRef.current) {
       observer.observe(videoRef?.current);
+
+      videoRef.current.onwaiting = () => {
+        console.log("waiting");
+
+        setIsLoading(true);
+      };
+
+      videoRef.current.oncanplaythrough = () => {
+        console.log("play");
+
+        setIsLoading(false);
+      };
+
+      videoRef.current.onloadstart = () => {
+        console.log("waiting");
+
+        setIsLoading(true);
+      };
+
       videoRef.current.ontimeupdate = () => {
         if (videoRef.current?.currentTime && videoRef.current?.duration)
           setWidth(
@@ -71,7 +92,9 @@ const VideoCard: FC<Props> = ({ page }) => {
       };
     }
     return () => {
-      if (videoRef.current) observer.unobserve(videoRef?.current);
+      if (videoRef.current) {
+        observer.unobserve(videoRef?.current);
+      }
     };
   }, []);
 
@@ -113,6 +136,11 @@ const VideoCard: FC<Props> = ({ page }) => {
         {!isPlaying && (
           <div className="absolute inset-0 w-full h-full bg-black/30 backdrop-blur-sm z-10 flex items-center justify-center text-5xl pointer-events-none">
             <PlayIcon />
+          </div>
+        )}
+        {isLoading && (
+          <div className="absolute inset-0 w-full h-full bg-black/30 backdrop-blur-sm z-10 flex items-center justify-center text-2xl pointer-events-none">
+            <SpinnerIcon className="animate-spin" />
           </div>
         )}
         <div className="absolute bottom-0 left-0 right-0 h-60 z-20 bg-gradient-to-t from-black opacity-30 pointer-events-none select-none" />
