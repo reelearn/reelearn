@@ -1,5 +1,5 @@
 import BooksContainer from "@/components/custom/books-container";
-import ThemeToggle from "@/components/custom/theme-toggle";
+import { books } from "@/constants/books";
 
 const Home = () => {
   return (
@@ -10,7 +10,7 @@ const Home = () => {
         maxWidth: 450,
       }}
     >
-      <BooksContainer />
+      <BooksContainer books={books} />
     </div>
   );
 };

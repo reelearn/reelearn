@@ -1,18 +1,22 @@
 "use client";
 
-import { useCallback, useEffect, useRef, useState } from "react";
+import { FC, useCallback, useEffect, useRef, useState } from "react";
 
 // Import Swiper React components
 import { Swiper, SwiperRef, SwiperSlide } from "swiper/react";
 
 // Import Swiper styles
 import "swiper/css";
-import { books } from "@/constants/books";
-import StorySlider from "./story-slider";
+import BookSlider from "./book-slider";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import { Mousewheel } from "swiper/modules";
+import { Book } from "@/interfaces";
 
-const BooksContainer = () => {
+interface Props {
+  books: Book[];
+}
+
+const BooksContainer: FC<Props> = ({ books }) => {
   const [height, setHeight] = useState(0);
   const swiperRef = useRef<SwiperRef | null>(null);
 
@@ -71,16 +75,12 @@ const BooksContainer = () => {
         modules={[Mousewheel]}
         onSlideChange={(s) => {
           setCurrentBookIndex(s.activeIndex);
-          console.log(books[s.activeIndex].id);
-
-          router.replace(
-            `${pathname}?${createQueryString("book", books[s.activeIndex].id)}`
-          );
+          router.replace(`/book/${books[s.activeIndex].id}`);
         }}
       >
         {books.map((book, index) => (
           <SwiperSlide key={index} className="w-full h-full">
-            <StorySlider
+            <BookSlider
               height={height}
               currentBook={currentBookIndex === index}
               pages={book.pages}

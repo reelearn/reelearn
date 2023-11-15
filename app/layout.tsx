@@ -7,7 +7,10 @@ import BottomNavigation from "@/components/custom/botton-navigation";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Books as Reels",
+  title: {
+    template: "%s - Books as Reels",
+    default: "Books as Reels",
+  },
   description:
     "Get the gist of great books in captivating reels. Perfect for bookworms on the go!",
 };

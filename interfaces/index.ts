@@ -1,5 +1,6 @@
 export interface Book {
   id: string;
+  name: string;
   user: User;
   pages: Page[];
 }

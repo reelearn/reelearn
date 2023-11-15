@@ -67,20 +67,14 @@ const VideoCard: FC<Props> = ({ page }) => {
       observer.observe(videoRef?.current);
 
       videoRef.current.onwaiting = () => {
-        console.log("waiting");
-
         setIsLoading(true);
       };
 
       videoRef.current.oncanplaythrough = () => {
-        console.log("play");
-
         setIsLoading(false);
       };
 
       videoRef.current.onloadstart = () => {
-        console.log("waiting");
-
         setIsLoading(true);
       };
 

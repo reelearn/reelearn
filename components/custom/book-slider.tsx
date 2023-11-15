@@ -26,7 +26,7 @@ interface Props {
   pages: Page[];
 }
 
-const StorySlider: FC<Props> = ({ height, pages }) => {
+const BookSlider: FC<Props> = ({ height, pages }) => {
   const swiperRef = useRef<SwiperRef | null>(null);
 
   const [isPlaying, setIsPlaying] = useState(true);
@@ -128,4 +128,4 @@ const StorySlider: FC<Props> = ({ height, pages }) => {
   );
 };
 
-export default StorySlider;
+export default BookSlider;
