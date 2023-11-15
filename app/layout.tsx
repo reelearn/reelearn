@@ -8,7 +8,8 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Books as Reels",
-  description: "Get the gist of great books in captivating reels. Perfect for bookworms on the go!",
+  description:
+    "Get the gist of great books in captivating reels. Perfect for bookworms on the go!",
 };
 
 export default function RootLayout({

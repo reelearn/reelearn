@@ -11,7 +11,7 @@ import "swiper/css";
 // import required modules
 import { Autoplay } from "swiper/modules";
 
-import { Page, PosterPage, TextPage, VideoPage } from "@/interfaces";
+import { Page } from "@/interfaces";
 
 import VideoCard from "./video-card";
 import TextCard from "./text-card";
@@ -31,15 +31,6 @@ const StorySlider: FC<Props> = ({ height, pages }) => {
 
   const [isPlaying, setIsPlaying] = useState(true);
   const [barsWidth, setBarsWidth] = useState<number[]>([]);
-
-  //   const handleIntersection = (entries: IntersectionObserverEntry[]) => {
-  //     if (entries[0].isIntersecting) {
-  //       intersectionObserver.disconnect();
-  //       swiperRef.current?.swiper.autoplay.start();
-  //     }
-  //   };
-
-  //   const intersectionObserver = new IntersectionObserver(handleIntersection);
 
   const togglePlay = () => {
     setIsPlaying((prevState) => {
@@ -105,18 +96,9 @@ const StorySlider: FC<Props> = ({ height, pages }) => {
     >
       {pages.map((page, index) => (
         <SwiperSlide key={index} className="relative w-full h-full">
-          {page.type === "POSTER" && (
-            <PosterCard content={page.content as PosterPage} />
-          )}
-          {page.type === "TEXT" && (
-            <TextCard content={page.content as TextPage} />
-          )}
-          {page.type === "VIDEO" && (
-            <VideoCard
-              video={page.content as VideoPage}
-              user={{ name: "Sahil Verma" }}
-            />
-          )}
+          {page.type === "POSTER" && <PosterCard page={page} />}
+          {page.type === "TEXT" && <TextCard page={page} />}
+          {page.type === "VIDEO" && <VideoCard page={page} />}
         </SwiperSlide>
       ))}
       <div className="absolute top-0 left-0 bg-black/20 backdrop-blur w-full flex gap-1 z-50 p-3">

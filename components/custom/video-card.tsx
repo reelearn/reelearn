@@ -17,11 +17,10 @@ import { useDispatch, useSelector } from "react-redux";
 import { selectAudio, setAudio } from "@/redux/slices/audioSlice";
 
 interface Props {
-  video: VideoPage;
-  user: User;
+  page: VideoPage;
 }
 
-const VideoCard: FC<Props> = ({ video, user }) => {
+const VideoCard: FC<Props> = ({ page }) => {
   const videoRef = useRef<HTMLVideoElement | null>(null);
   const audio = useSelector(selectAudio);
   const dispatch = useDispatch();
@@ -98,7 +97,7 @@ const VideoCard: FC<Props> = ({ video, user }) => {
             autoPlay
             muted={audio?.mute}
             ref={videoRef}
-            src={video?.src}
+            src={page.src}
           />
         </div>
         <div
@@ -154,7 +153,7 @@ const VideoCard: FC<Props> = ({ video, user }) => {
             <div>
               <div className="flex items-center">
                 <h1 className="text-bold pointer-events-auto cursor-pointer mt-2">
-                  @{user.name}
+                  @{page.user.name}
                 </h1>
                 <div className="ml-1 h-3 w-3 text-brand">
                   <VerifiedIcon className="text-blue-500" />
@@ -172,11 +171,11 @@ const VideoCard: FC<Props> = ({ video, user }) => {
             data-test="content-label"
           >
             <div className="text-ellipsis overflow-hidden flex-grow whitespace-nowrap">
-              {video.caption}
+              {page.caption}
             </div>
           </div>
           <div className="flex flex-row gap-2 flex-wrap">
-            {video.tags.map((tag, index) => (
+            {page.tags.map((tag, index) => (
               <button
                 key={index}
                 className="flex flex-row items-center gap-x-2 px-2 h-6 rounded-md text-sm font-semibold whitespace-nowrap pointer-events-auto select-none cursor-pointer bg-white bg-opacity-20"
