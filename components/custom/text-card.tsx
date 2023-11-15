@@ -2,6 +2,7 @@
 
 import { TextPage } from "@/interfaces";
 import { FC } from "react";
+import AudioPlayer from "./audio-player";
 
 interface Props {
   page: TextPage;
@@ -10,13 +11,14 @@ interface Props {
 const TextCard: FC<Props> = ({ page }) => {
   return (
     <div
-      className="w-full h-full flex flex-col items-center justify-center gap-4"
+      className="relative w-full h-full flex flex-col items-center justify-center gap-4"
       style={{
         background: page?.bgColor,
         color: page?.textColor,
       }}
     >
       <p className="text-lg text-center w-full p-4">{page?.text}</p>
+      {page.audioSrc && <AudioPlayer src={page.audioSrc} />}
     </div>
   );
 };

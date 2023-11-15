@@ -12,7 +12,7 @@ import {
 import { AiFillPlayCircle as PlayIcon } from "react-icons/ai";
 
 import { PiHeartBold as HeartIcon } from "react-icons/pi";
-import { User, VideoPage } from "@/interfaces";
+import { VideoPage } from "@/interfaces";
 import { useDispatch, useSelector } from "react-redux";
 import { selectAudio, setAudio } from "@/redux/slices/audioSlice";
 
