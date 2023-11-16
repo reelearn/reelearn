@@ -11,7 +11,7 @@ import "swiper/css";
 // import required modules
 import { Autoplay } from "swiper/modules";
 
-import { Page } from "@/interfaces";
+import { Book, Page } from "@/interfaces";
 
 import VideoCard from "./video-card";
 import TextCard from "./text-card";
@@ -19,14 +19,16 @@ import PosterCard from "./poster-card";
 
 // icons
 import { FaPlay as PlayIcon, FaPause as PauseIcon } from "react-icons/fa6";
+import { MdShare as ShareIcon } from "react-icons/md";
+import { RWebShare } from "react-web-share";
 
 interface Props {
   currentBook: boolean;
   height: number;
-  pages: Page[];
+  book: Book;
 }
 
-const BookSlider: FC<Props> = ({ height, pages }) => {
+const BookSlider: FC<Props> = ({ height, book }) => {
   const swiperRef = useRef<SwiperRef | null>(null);
 
   const [isPlaying, setIsPlaying] = useState(true);
@@ -94,7 +96,7 @@ const BookSlider: FC<Props> = ({ height, pages }) => {
         });
       }}
     >
-      {pages.map((page, index) => (
+      {book.pages.map((page, index) => (
         <SwiperSlide key={index} className="relative w-full h-full">
           {page.type === "POSTER" && <PosterCard page={page} />}
           {page.type === "TEXT" && <TextCard page={page} />}
@@ -116,13 +118,25 @@ const BookSlider: FC<Props> = ({ height, pages }) => {
           </div>
         ))}
       </div>
-      <div className="z-50 absolute bottom-4 right-4">
+      <div className="z-50 absolute bottom-4 right-4 flex flex-col gap-4">
         <button
           onClick={togglePlay}
           className="h-10 text-xs flex items-center justify-center rounded-full aspect-square bg-black/20 backdrop-blur"
         >
           {isPlaying ? <PauseIcon /> : <PlayIcon />}
         </button>
+
+        <RWebShare
+          data={{
+            text: "Discover a world of knowledge with Reelearn - book summary app! Concise, insightful summaries in just a tap. Dive into the essence of books effortlessly.",
+            url: `https://books.reelearn.ai/book/${book.id}`,
+            title: book.name,
+          }}
+        >
+          <div className="h-10 cursor-pointer text-xs flex items-center justify-center rounded-full aspect-square bg-black/20 backdrop-blur">
+            <ShareIcon />
+          </div>
+        </RWebShare>
       </div>
     </Swiper>
   );

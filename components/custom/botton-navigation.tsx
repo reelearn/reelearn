@@ -5,6 +5,7 @@ import { MdHomeFilled as HomeIcon } from "react-icons/md";
 import { MdSettings as SettingsIcon } from "react-icons/md";
 import { MdHelp as HelpIcon } from "react-icons/md";
 import { MdShare as ShareIcon } from "react-icons/md";
+import { IoMenu as MenuIcon } from "react-icons/io5";
 
 const BottomNavigation = () => {
   return (
@@ -46,7 +47,7 @@ const BottomNavigation = () => {
 
         <div className="no-link-highlight select-none basis-0 flex-grow cursor-pointer">
           <div className="select-none flex flex-col items-center justify-center flex-1 transition duration-100 ease-out transform false animate-activate-shrink">
-            <ShareIcon className="h-[28px] fill-white stroke-white w-[28px]" />
+            <MenuIcon className="h-[28px] fill-white stroke-white w-[28px]" />
           </div>
         </div>
       </nav>

@@ -83,7 +83,7 @@ const BooksContainer: FC<Props> = ({ books }) => {
             <BookSlider
               height={height}
               currentBook={currentBookIndex === index}
-              pages={book.pages}
+              book={book}
             />
           </SwiperSlide>
         ))}
