@@ -15,7 +15,7 @@ export const books: Book[] = [
       },
       {
         type: "VIDEO",
-        caption: "yo bros",
+        title: "yo bros",
         src: "/videos/1.mp4",
         tags: ["tag 1", "tag 2"],
         user: {

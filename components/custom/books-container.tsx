@@ -8,7 +8,7 @@ import { Swiper, SwiperRef, SwiperSlide } from "swiper/react";
 // Import Swiper styles
 import "swiper/css";
 import BookSlider from "./book-slider";
-import { usePathname, useRouter, useSearchParams } from "next/navigation";
+import { usePathname, useSearchParams, useRouter } from "next/navigation";
 import { Mousewheel } from "swiper/modules";
 import { Book } from "@/interfaces";
 
@@ -75,7 +75,9 @@ const BooksContainer: FC<Props> = ({ books }) => {
         modules={[Mousewheel]}
         onSlideChange={(s) => {
           setCurrentBookIndex(s.activeIndex);
-          router.replace(`/book/${books[s.activeIndex].id}`);
+          history.replaceState({}, "", `/book/${books[s.activeIndex].id}`);
+          // window.location.replace
+          // router.push(`/book/${books[s.activeIndex].id}`);
         }}
       >
         {books.map((book, index) => (

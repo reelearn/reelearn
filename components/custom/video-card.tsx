@@ -193,7 +193,7 @@ const VideoCard: FC<Props> = ({ page }) => {
             data-test="content-label"
           >
             <div className="text-ellipsis overflow-hidden flex-grow whitespace-nowrap">
-              {page.caption}
+              {page.title}
             </div>
           </div>
           <div className="flex flex-row gap-2 flex-wrap">

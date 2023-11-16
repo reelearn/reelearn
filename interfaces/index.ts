@@ -14,7 +14,7 @@ export type Page = TextPage | VideoPage | PosterPage;
 export interface VideoPage {
   type: "VIDEO";
   src: string;
-  caption: string;
+  title: string;
   tags: string[];
   user: User;
 }
@@ -23,7 +23,7 @@ export interface TextPage {
   type: "TEXT";
   textColor: string;
   bgColor: string;
-  title: string;
+  title?: string;
   text: string;
   audioSrc?: string;
 }
@@ -31,7 +31,7 @@ export interface TextPage {
 export interface PosterPage {
   type: "POSTER";
   poster: string;
-  title: string;
+  title?: string;
   titleColor: string;
   bgColor: string;
 }
