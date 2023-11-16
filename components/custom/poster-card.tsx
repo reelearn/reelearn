@@ -19,7 +19,7 @@ const PosterCard: FC<Props> = ({ page }) => {
     >
       <Image
         src={page.poster}
-        alt={page.title}
+        alt={page?.title as string}
         height={1000}
         width={300}
         className="block aspect-[3/4] object-cover w-[80%] rounded-lg overflow-hidden"
