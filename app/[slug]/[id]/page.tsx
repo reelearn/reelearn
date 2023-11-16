@@ -1,23 +1,43 @@
 import BooksContainer from "@/components/custom/books-container";
-import { books } from "@/constants/books";
-import { Book } from "@/interfaces";
+import { data } from "@/constants";
+import { categories } from "@/constants/categories";
+import { Book, Category } from "@/interfaces";
 import { FC } from "react";
 
 interface Props {
-  params: { id: string };
+  params: {
+    id: string;
+    slug: string;
+  };
 }
 
 export async function generateMetadata({ params }: Props) {
-  const book = books.find((i) => i.id === params.id);
+  const { id, slug } = params;
+
+  const category = categories.find((i) => i === slug);
+
+  if (!category) {
+    return;
+  }
+
+  const books = data[category as Category];
+  const book = books.find((i) => i.id === id);
 
   return {
     title: book?.name,
   };
 }
 
-const Book: FC<Props> = ({ params }) => {
-  const { id } = params;
+const BookPage: FC<Props> = ({ params }) => {
+  const { id, slug } = params;
 
+  const category = categories.find((i) => i === slug);
+
+  if (!category) {
+    throw Error("No category");
+  }
+
+  const books = data[category];
   const book = books.find((i) => i.id === id);
 
   const newBooks = [book as Book, ...books.filter((i) => i.id !== id)];
@@ -38,5 +58,4 @@ const Book: FC<Props> = ({ params }) => {
     );
   }
 };
-
-export default Book;
+export default BookPage;

@@ -1,1 +1,3 @@
-export const categories = ["book"];
+import { Category } from "@/interfaces";
+
+export const categories: Category[] = ["book"];

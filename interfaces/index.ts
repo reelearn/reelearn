@@ -5,6 +5,8 @@ export interface Book {
   pages: Page[];
 }
 
+export type Category = "book";
+
 export interface User {
   name: string;
 }
