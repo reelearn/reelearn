@@ -59,7 +59,7 @@ const AudioPlayer: FC<Props> = ({ src }) => {
       }
     );
     if (audioRef.current) {
-      observer.observe(audioRef?.current);
+      observer.observe(audioRef?.current.parentElement as Element);
       audioRef.current.ontimeupdate = () => {
         if (audioRef.current?.currentTime && audioRef.current?.duration)
           setWidth(
@@ -68,7 +68,8 @@ const AudioPlayer: FC<Props> = ({ src }) => {
       };
     }
     return () => {
-      if (audioRef.current) observer.unobserve(audioRef?.current);
+      if (audioRef.current)
+        observer.unobserve(audioRef?.current?.parentElement as Element);
     };
   }, []);
 

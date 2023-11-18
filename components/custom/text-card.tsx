@@ -17,7 +17,9 @@ const TextCard: FC<Props> = ({ page }) => {
         color: page?.textColor,
       }}
     >
-      {page?.title && <h1 className="font-bold text-2xl">{page.title}</h1>}
+      {page?.title && (
+        <h1 className="font-bold w-full text-center text-2xl">{page.title}</h1>
+      )}
       <p className="text-lg text-center w-full p-4">{page?.text}</p>
       {page.audioSrc && <AudioPlayer src={page.audioSrc} />}
     </div>
