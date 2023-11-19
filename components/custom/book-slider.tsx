@@ -99,10 +99,10 @@ const BookSlider: FC<Props> = ({ height, book }) => {
       {book.pages.map((page, index) => (
         <SwiperSlide key={index} className="relative w-full h-full">
           {page.type === "POSTER" && <PosterCard page={page} />}
-          {page.type === "TEXT" && (
+          {page.type === "TEXT" && swiperRef.current && (
             <TextCard swiper={swiperRef.current as SwiperRef} page={page} />
           )}
-          {page.type === "VIDEO" && (
+          {page.type === "VIDEO" && swiperRef.current && (
             <VideoCard swiper={swiperRef.current as SwiperRef} page={page} />
           )}
         </SwiperSlide>

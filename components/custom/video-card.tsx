@@ -57,6 +57,7 @@ const VideoCard: FC<Props> = ({ swiper, page }) => {
         setIsPlaying(entry.isIntersecting);
 
         const { isIntersecting } = entry;
+
         if (isIntersecting) {
           videoRef?.current?.play();
           swiper?.swiper?.autoplay?.pause();
@@ -121,7 +122,6 @@ const VideoCard: FC<Props> = ({ swiper, page }) => {
             className="h-full w-full object-cover object-center pointer-events-none  rounded-md"
             preload="auto"
             playsInline
-            loop
             autoPlay
             muted={audio?.mute}
             ref={videoRef}
