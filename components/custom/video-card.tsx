@@ -16,12 +16,14 @@ import { FaSpinner as SpinnerIcon } from "react-icons/fa";
 import { VideoPage } from "@/interfaces";
 import { useDispatch, useSelector } from "react-redux";
 import { selectAudio, setAudio } from "@/redux/slices/audioSlice";
+import { SwiperRef } from "swiper/react";
 
 interface Props {
   page: VideoPage;
+  swiper: SwiperRef;
 }
 
-const VideoCard: FC<Props> = ({ page }) => {
+const VideoCard: FC<Props> = ({ swiper, page }) => {
   const videoRef = useRef<HTMLVideoElement | null>(null);
   const audio = useSelector(selectAudio);
   const dispatch = useDispatch();
@@ -54,7 +56,10 @@ const VideoCard: FC<Props> = ({ page }) => {
         const [entry] = entries;
         setIsPlaying(entry.isIntersecting);
         entry.isIntersecting
-          ? videoRef?.current?.play()
+          ? () => {
+              swiper?.swiper?.autoplay?.pause();
+              videoRef?.current?.play();
+            }
           : videoRef?.current?.pause();
       },
       {
@@ -72,6 +77,10 @@ const VideoCard: FC<Props> = ({ page }) => {
 
       videoRef.current.oncanplaythrough = () => {
         setIsLoading(false);
+      };
+
+      videoRef.current.onended = () => {
+        swiper.swiper.slideNext();
       };
 
       videoRef.current.onloadstart = () => {

@@ -12,12 +12,14 @@ import {
 } from "react-icons/md";
 
 import { FaPlay as PlayIcon, FaPause as PauseIcon } from "react-icons/fa6";
+import { SwiperRef } from "swiper/react";
 
 interface Props {
   src: string;
+  swiper: SwiperRef;
 }
 
-const AudioPlayer: FC<Props> = ({ src }) => {
+const AudioPlayer: FC<Props> = ({ swiper, src }) => {
   const audioRef = useRef<HTMLAudioElement | null>(null);
   const audio = useSelector(selectAudio);
   const dispatch = useDispatch();
@@ -49,7 +51,11 @@ const AudioPlayer: FC<Props> = ({ src }) => {
         const [entry] = entries;
         setIsPlaying(entry.isIntersecting);
         entry.isIntersecting
-          ? audioRef?.current?.play()
+          ? () => {
+              swiper?.swiper?.autoplay?.pause();
+
+              audioRef?.current?.play();
+            }
           : audioRef?.current?.pause();
       },
       {
@@ -60,6 +66,12 @@ const AudioPlayer: FC<Props> = ({ src }) => {
     );
     if (audioRef.current) {
       observer.observe(audioRef?.current.parentElement as Element);
+      // audioRef.current
+
+      audioRef.current.onended = () => {
+        swiper?.swiper?.slideNext();
+      };
+
       audioRef.current.ontimeupdate = () => {
         if (audioRef.current?.currentTime && audioRef.current?.duration)
           setWidth(
