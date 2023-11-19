@@ -50,13 +50,14 @@ const AudioPlayer: FC<Props> = ({ swiper, src }) => {
       (entries) => {
         const [entry] = entries;
         setIsPlaying(entry.isIntersecting);
-        entry.isIntersecting
-          ? () => {
-              swiper?.swiper?.autoplay?.pause();
 
-              audioRef?.current?.play();
-            }
-          : audioRef?.current?.pause();
+        const { isIntersecting } = entry;
+        if (isIntersecting) {
+          audioRef?.current?.play();
+          swiper?.swiper?.autoplay?.pause();
+        } else {
+          audioRef?.current?.pause();
+        }
       },
       {
         root: null,

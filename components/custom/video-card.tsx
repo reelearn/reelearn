@@ -55,12 +55,14 @@ const VideoCard: FC<Props> = ({ swiper, page }) => {
       (entries) => {
         const [entry] = entries;
         setIsPlaying(entry.isIntersecting);
-        entry.isIntersecting
-          ? () => {
-              swiper?.swiper?.autoplay?.pause();
-              videoRef?.current?.play();
-            }
-          : videoRef?.current?.pause();
+
+        const { isIntersecting } = entry;
+        if (isIntersecting) {
+          videoRef?.current?.play();
+          swiper?.swiper?.autoplay?.pause();
+        } else {
+          videoRef?.current?.pause();
+        }
       },
       {
         root: null,
