@@ -7,7 +7,7 @@ export const books: Book[] = [
   "pages": [
     {
       "type": "POSTER",
-      "poster": "https://www.reelearn.ai/Books/And%20Then%20There%20Were%20None/icon.jpg",
+      "poster": "https://www.reelearn.ai/Books/And%20Then%20There%20Were%20None%20by%20Agatha%20Christie/icon.jpg",
       "title": "And Then There Were None",
       "titleColor": "#fff",
       "bgColor": "#222024"
