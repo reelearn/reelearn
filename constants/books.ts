@@ -24,7 +24,7 @@ export const books: Book[] = [
     },
     {
       "type": "TEXT",
-      ""textColor": "black",
+      "textColor": "black",
         "bgColor": "white",
         "title": "Part 2: The First Death",
         "text": "In the second part of the story, the first death occurs. One of the ten strangers is found dead, and the remaining guests are left in shock and fear. They begin to suspect each other and question their own safety. As they try to unravel the mystery, they realize that there is a killer among them. The sense of paranoia intensifies, and they become even more desperate to uncover the truth. With each passing moment, the tension rises, and the reader is left on the edge of their seat.",
