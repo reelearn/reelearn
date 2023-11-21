@@ -4,73 +4,78 @@ export const books: Book[] = [
   {
     name: "And Then There Were None by Agatha Christie",
     id: "4c57389e-6d08-49f8-8efa-03587c80803e",
-    pages: [
-      {
-        type: "POSTER",
-        poster:
-          "https://www.reelearn.ai/Books/And%20Then%20There%20Were%20None%20by%20Agatha%20Christie/icon.jpg",
-        title: "And Then There Were None by Agatha Christie",
-        titleColor: "#fff",
-        bgColor: "#222024",
-      },
-      {
-        type: "VIDEO",
-        title: "yo bros",
-        src: "/videos/1.mp4",
-        tags: ["tag 1", "tag 2"],
-        user: {
-          name: "Sahil Verma",
-        },
-      },
-      {
-        type: "TEXT",
-        textColor: "black",
-        bgColor: "white",
-        title: "Part 1: The Invitation to Indian Island",
-        text: "And Then There Were None by Agatha Christie begins with ten strangers receiving invitations to visit Indian Island. Each guest has a different reason for accepting the invitation, whether it's for a job opportunity or a chance to reconnect with old friends. The guests arrive on the island, only to find that their hosts, Mr. and Mrs. U.N. Owen, are nowhere to be found. As they settle in, they notice a peculiar nursery rhyme framed on the wall, hinting at a dark fate that awaits them all.",
-        audioSrc: "/audios/1.mp3",
-      },
-      {
-        type: "TEXT",
-        textColor: "black",
-        bgColor: "white",
-        title: "Part 2: The Mysterious Disappearances",
-        text: "As the guests explore the island, they discover that they are completely cut off from the mainland. The boat that brought them has mysteriously disappeared, leaving them stranded. They begin to suspect foul play when they find a gramophone recording accusing each of them of committing a murder in the past. Shocked and confused, they realize that they have been brought to the island to pay for their crimes. Panic sets in as they realize that the killer must be among them.",
-      },
-      {
-        type: "TEXT",
-        textColor: "black",
-        bgColor: "white",
-        title: "Part 3: The First Death",
-        text: "The first death occurs when one of the guests, Anthony Marston, chokes on a poisoned drink. The remaining guests are horrified and start to suspect each other. They search the island for any signs of the killer but find nothing. Tensions rise as paranoia takes hold, and they begin to question their own sanity. With each passing hour, the guests become more desperate to uncover the truth and survive.",
-      },
-      {
-        type: "TEXT",
-        textColor: "black",
-        bgColor: "white",
-        title: "Part 4: The Ten Little Soldier Statues",
-        text: "As the guests gather for dinner, they notice ten soldier statues on the dining table. Each statue represents one of them, and with each death, a statue disappears. It becomes clear that the killer is following the nursery rhyme, 'Ten Little Soldier Boys,' as a guide for their murders. The remaining guests are filled with dread as they realize that the killer is methodically eliminating them one by one.",
-      },
-      {
-        type: "TEXT",
-        textColor: "black",
-        bgColor: "white",
-        title: "Part 5: The Unraveling of Secrets",
-        text: "As the body count rises, the remaining guests desperately try to uncover the identity of the killer. They share their suspicions and secrets, hoping to find a clue that will lead them to the murderer. However, the more they learn about each other, the more confused they become. Trust erodes, and alliances shift as they struggle to stay alive and outsmart the killer who seems to always be one step ahead.",
-      },
-      {
-        type: "TEXT",
-        textColor: "black",
-        bgColor: "white",
-        title: "Part 6: The Final Revelation",
-        text: "In the thrilling conclusion, the remaining guests confront their darkest secrets and face the truth about their pasts. They realize that the killer is not one of them but someone who has been orchestrating the events from behind the scenes. The shocking identity of the murderer is revealed, leaving the survivors in disbelief. In a race against time, they must find a way to escape the island and bring the killer to justice before it's too late.",
-      },
-    ],
-    user: {
-      name: "Agatha Christie",
+  "pages": [
+    {
+      "type": "POSTER",
+      "poster": "https://www.reelearn.ai/Books/And%20Then%20There%20Were%20None%20by%20Agatha%20Christie/icon.jpg",
+      "title": "And Then There Were None",
+      "titleColor": "#fff",
+      "bgColor": "#222024"
+      
     },
-  },
-  {
+    {
+      "type": "TEXT",
+      
+        "textColor": "black",
+        "bgColor": "white",
+        "title": "Part 1: Introduction to the Mysterious Island",
+        "text": "And Then There Were None by Agatha Christie is a classic mystery novel that takes place on a secluded island. Ten strangers, each with a dark secret, are invited to the island by a mysterious host. They all arrive, only to find that their host is absent. As they settle in, they start to realize that there is something sinister at play. The tension builds as they discover a nursery rhyme that hints at their impending doom. The stage is set for a thrilling and suspenseful tale of murder and deception.",
+        "audioSrc": "https://www.reelearn.ai/Books/And%20Then%20There%20Were%20None%20by%20Agatha%20Christie/1.mp3"
+    },
+    {
+      "type": "TEXT",
+      "textColor": "black",
+        "bgColor": "white",
+        "title": "Part 2: The First Death",
+        "text": "In the second part of the story, the first death occurs. One of the ten strangers is found dead, and the remaining guests are left in shock and fear. They begin to suspect each other and question their own safety. As they try to unravel the mystery, they realize that there is a killer among them. The sense of paranoia intensifies, and they become even more desperate to uncover the truth. With each passing moment, the tension rises, and the reader is left on the edge of their seat.",
+        "audioSrc": "https://www.reelearn.ai/Books/And%20Then%20There%20Were%20None%20by%20Agatha%20Christie/2.mp3"
+
+    },
+    {
+      "type": "TEXT",
+
+        "textColor": "black",
+        "bgColor": "white",
+        "title": "Part 3: The Secrets Unveiled",
+        "text": "As the story progresses, the secrets of each character start to unravel. Through flashbacks and revelations, we learn about their dark pasts and the crimes they have committed. Each character becomes a suspect, and the reader is left guessing who the killer could be. The psychological depth of the characters adds another layer of intrigue to the story. Agatha Christie masterfully weaves together the intricate web of secrets, keeping the reader engaged and eager to discover the truth.",
+        "audioSrc": "https://www.reelearn.ai/Books/And%20Then%20There%20Were%20None%20by%20Agatha%20Christie/3.mp3"
+    },
+    {
+      "type": "TEXT",
+
+        "textColor": "black",
+        "bgColor": "white",
+        "title": "Part 4: The Body Count Rises",
+        "text": "In this part, the body count continues to rise. The remaining guests are terrorized by the unseen killer, and they struggle to stay alive. The isolation of the island adds to the sense of claustrophobia and helplessness. With each death, the tension escalates, and the survivors become more desperate to find a way off the island. Agatha Christie keeps the reader guessing until the very end, as the identity of the killer remains a mystery.",
+        "audioSrc": "https://www.reelearn.ai/Books/And%20Then%20There%20Were%20None%20by%20Agatha%20Christie/4.mp3"
+
+    },
+    {
+      "type": "TEXT",
+
+        "textColor": "black",
+        "bgColor": "white",
+        "title": "Part 5: The Final Reveal",
+        "text": "In the penultimate part of the story, the truth is finally revealed. The surviving guests confront the killer and uncover their motives. Agatha Christie's brilliant plot twists keep the reader guessing until the very end. The final reveal is both shocking and satisfying, tying together all the loose ends and providing a satisfying resolution. The reader is left in awe of Christie's storytelling prowess.",
+        "audioSrc": "https://www.reelearn.ai/Books/And%20Then%20There%20Were%20None%20by%20Agatha%20Christie/5.mp3"
+
+    },
+    {
+      "type": "TEXT",
+
+        "textColor": "black",
+        "bgColor": "white",
+        "title": "Part 6: Reflection and Conclusion",
+        "text": "In the final part of the book, the remaining characters reflect on the events that have transpired. They come to terms with their own guilt and the consequences of their actions. And Then There Were None leaves the reader with a sense of moral ambiguity, questioning the nature of justice and the darkness that lies within us all. Agatha Christie's masterpiece is a timeless classic that continues to captivate readers with its intricate plot, well-developed characters, and suspenseful atmosphere.",
+        "audioSrc": "https://www.reelearn.ai/Books/And%20Then%20There%20Were%20None%20by%20Agatha%20Christie/6.mp3"
+
+    }
+  ],
+  "user": {
+    "name": "Agatha Christie"
+  }
+},
+{
     name: "Harry Potter and the Chamber of Secrets",
     id: "f25d3bfe-26db-4d1b-8669-7f6547fa5aee",
     pages: [
