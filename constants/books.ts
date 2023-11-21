@@ -78,7 +78,7 @@ export const books: Book[] = [
   "user": {
     "name": "Agatha Christie"
   }
-}
+},
 {
     name: "Harry Potter and the Chamber of Secrets",
     id: "f25d3bfe-26db-4d1b-8669-7f6547fa5aee",
