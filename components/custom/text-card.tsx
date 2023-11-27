@@ -4,6 +4,7 @@ import { TextPage } from "@/interfaces";
 import { FC } from "react";
 import AudioPlayer from "./audio-player";
 import { SwiperRef } from "swiper/react";
+import { useInView } from "react-intersection-observer";
 
 interface Props {
   page: TextPage;
@@ -11,8 +12,14 @@ interface Props {
 }
 
 const TextCard: FC<Props> = ({ swiper, page }) => {
+  const { ref, inView } = useInView({
+    root: null,
+    rootMargin: "0px",
+    threshold: 1.0,
+  });
   return (
     <div
+      ref={ref}
       className="relative w-full h-full flex flex-col items-center justify-center gap-2"
       style={{
         background: page?.bgColor,
@@ -24,7 +31,11 @@ const TextCard: FC<Props> = ({ swiper, page }) => {
       )}
       <p className="text-lg text-center w-full p-4">{page?.text}</p>
       {page.audioSrc && swiper && (
-        <AudioPlayer swiper={swiper as SwiperRef} src={page.audioSrc} />
+        <AudioPlayer
+          swiper={swiper as SwiperRef}
+          src={page.audioSrc}
+          inView={inView}
+        />
       )}
     </div>
   );

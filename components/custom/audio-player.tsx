@@ -17,14 +17,27 @@ import { SwiperRef } from "swiper/react";
 interface Props {
   src: string;
   swiper: SwiperRef;
+  inView: boolean;
 }
 
-const AudioPlayer: FC<Props> = ({ swiper, src }) => {
+const AudioPlayer: FC<Props> = ({ swiper, src, inView }) => {
+  const [isPlaying, setIsPlaying] = useState(true);
+  const [width, setWidth] = useState(0);
+
   const audioRef = useRef<HTMLAudioElement | null>(null);
   const audio = useSelector(selectAudio);
   const dispatch = useDispatch();
-  const [isPlaying, setIsPlaying] = useState(true);
-  const [width, setWidth] = useState(0);
+
+  useEffect(() => {
+    setIsPlaying(inView);
+    if (inView) {
+      audioRef?.current?.play();
+
+      swiper?.swiper?.autoplay?.pause();
+    } else {
+      audioRef?.current?.pause();
+    }
+  }, [inView]);
 
   const toggleAudio = () => {
     if (audioRef.current) {
@@ -46,30 +59,7 @@ const AudioPlayer: FC<Props> = ({ swiper, src }) => {
   };
 
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        const [entry] = entries;
-        setIsPlaying(entry.isIntersecting);
-
-        const { isIntersecting } = entry;
-        if (isIntersecting) {
-          audioRef?.current?.play();
-
-          swiper?.swiper?.autoplay?.pause();
-        } else {
-          audioRef?.current?.pause();
-        }
-      },
-      {
-        root: null,
-        rootMargin: "0px",
-        threshold: 1.0,
-      }
-    );
     if (audioRef.current) {
-      observer.observe(audioRef?.current.parentElement as Element);
-      // audioRef.current
-
       audioRef.current.onended = () => {
         swiper?.swiper?.slideNext();
       };
@@ -81,10 +71,6 @@ const AudioPlayer: FC<Props> = ({ swiper, src }) => {
           );
       };
     }
-    return () => {
-      if (audioRef.current)
-        observer.unobserve(audioRef?.current?.parentElement as Element);
-    };
   }, []);
 
   return (
