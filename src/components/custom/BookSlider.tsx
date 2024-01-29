@@ -142,7 +142,7 @@ const BookSlider: FC<Props> = ({ height, book, currentBook }) => {
         <RWebShare
           data={{
             text: "Discover a world of knowledge with Reelearn - book summary app! Concise, insightful summaries in just a tap. Dive into the essence of books effortlessly.",
-            url: `https://books.reelearn.ai/book/${book.id}`,
+            url: `https://app.reelearn.ai/book/${book.id}`,
             title: book.name,
           }}
         >
