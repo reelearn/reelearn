@@ -64,6 +64,15 @@ const BookSlider: FC<Props> = ({ height, book, currentBook }) => {
     };
   }, []);
 
+  useEffect(() => {
+    if (!currentBook) {
+      swiperRef.current?.swiper.autoplay.stop();
+    } else {
+      swiperRef.current?.swiper.autoplay.start();
+    }
+    console.log({ currentBook });
+  }, [currentBook]);
+
   return (
     <Swiper
       className=" w-full"
@@ -71,14 +80,6 @@ const BookSlider: FC<Props> = ({ height, book, currentBook }) => {
         height: `${height}px`,
       }}
       ref={swiperRef}
-      autoplay={
-        currentBook
-          ? {
-              delay: 5000,
-              disableOnInteraction: false,
-            }
-          : false
-      }
       pagination={{
         clickable: true,
       }}

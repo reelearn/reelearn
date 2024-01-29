@@ -19,7 +19,7 @@ const Home = () => {
         maxWidth: 450,
       }}
     >
-      <BookContainer books={books.slice(0, 3)} />
+      <BookContainer books={books} />
     </div>
   );
 };

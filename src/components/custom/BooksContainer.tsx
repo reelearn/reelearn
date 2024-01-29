@@ -62,7 +62,7 @@ const BooksContainer: FC<Props> = ({ books }) => {
         modules={[Virtual, Mousewheel]}
         onSlideChange={(s) => {
           setCurrentBookIndex(s.activeIndex);
-          // history.replaceState({}, "", `/book/${books[s.activeIndex].id}`);
+          history.replaceState({}, "", `/book/${books[s.activeIndex].id}`);
         }}
       >
         {books.map((book, index) => (

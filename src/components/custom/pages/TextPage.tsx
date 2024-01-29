@@ -17,6 +17,7 @@ const TextCard: FC<Props> = ({ swiper, page }) => {
     rootMargin: "0px",
     threshold: 1.0,
   });
+
   return (
     <div
       ref={ref}
@@ -30,7 +31,7 @@ const TextCard: FC<Props> = ({ swiper, page }) => {
         <h1 className="font-bold w-full text-center text-2xl">{page.title}</h1>
       )}
       <p className="text-lg text-center w-full p-4">{page?.text}</p>
-      {page.audioSrc && swiper && (
+      {page.audioSrc && swiper && inView && (
         <AudioPlayer
           swiper={swiper as SwiperRef}
           src={page.audioSrc}

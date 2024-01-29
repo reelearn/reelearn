@@ -37,7 +37,7 @@ const AudioPlayer: FC<Props> = ({ swiper, src, inView }) => {
     } else {
       audioRef?.current?.pause();
     }
-  }, [inView]);
+  }, [inView, swiper?.swiper?.autoplay]);
 
   const toggleAudio = () => {
     if (audioRef.current) {
