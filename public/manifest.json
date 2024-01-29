@@ -1,12 +1,12 @@
 {
   "theme_color": "#209cee",
-  "background_color": "#203656",
+  "background_color": "#fbfdff",
   "display": "standalone",
-  "scope": "/",
+  "scope": "/*",
   "start_url": "/",
-  "name": "Books as Reel",
-  "short_name": "Books as Reel",
-  "description": "Books as Reel",
+  "name": "Books as Reels",
+  "short_name": "Books as Reels",
+  "description": "Books as Reels",
   "icons": [
     {
       "src": "/images/icon.png",
@@ -28,5 +28,13 @@
       "sizes": "512x512",
       "type": "image/png"
     }
+  ],
+  "id": "reelearn",
+  "lang": "en",
+  "dir": "auto",
+  "orientation": "portrait",
+  "categories": [
+    "books",
+    "education"
   ]
 }
