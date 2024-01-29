@@ -11,9 +11,9 @@ export interface User {
   name: string;
 }
 
-export type Page = TextPage | VideoPage | PosterPage;
+export type Page = ITextPage | IVideoPage | IPosterPage;
 
-export interface VideoPage {
+export interface IVideoPage {
   type: "VIDEO";
   src: string;
   title: string;
@@ -21,7 +21,7 @@ export interface VideoPage {
   user: User;
 }
 
-export interface TextPage {
+export interface ITextPage {
   type: "TEXT";
   textColor: string;
   bgColor: string;
@@ -30,7 +30,7 @@ export interface TextPage {
   audioSrc?: string;
 }
 
-export interface PosterPage {
+export interface IPosterPage {
   type: "POSTER";
   poster: string;
   title?: string;
