@@ -1,6 +1,30 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+
+## Reelearn: Reel Your Way to Knowledge - Free Microlearning Made Fun!
+
+Struggling to engage your employees with traditional training? Ditch the boredom and ignite your workforce with Reelearn, the open-source microlearning platform powered by captivating reels.
+
+## Why Reelearn?
+
+-Trendy format: Leverage the popularity of reels to deliver bite-sized learning in a format employees already love. Boost engagement and knowledge retention.
+-Free & open-source: No hefty training costs! Empower employees to learn independently, on their schedule, for free.
+-Quick & convenient: Microlearning modules last minutes, fitting seamlessly into busy schedules. Learn on the go, anytime, anywhere.
+-Highly customizable: Create your microlearning reels or share and adapt existing ones from the growing community library.
+-Collaborative spirit: Join the open-source movement and contribute to the platform's continuous improvement with a supportive community.
+
+## Benefits for your company:
+
+-Skyrocketing employee engagement and motivation.
+-Improved skill development and knowledge retention.
+-Reduced training costs and increased ROI.
+-A dynamic learning experience that keeps pace with trends.
+-A future-ready workforce equipped for success.
+
+Imagine: Your employees eagerly learn new skills through engaging reels, sharing their knowledge, and fostering a vibrant learning culture.
+
+Make it a reality with Reelearn!
 
 ## Getting Started
+This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 First, run the development server:
 
